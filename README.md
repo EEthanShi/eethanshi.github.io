@@ -6,7 +6,7 @@ Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.g
 
 | 文件 | 作用 |
 | --- | --- |
-| `index.html` | 页面结构和固定文字（简介、经历、教育、技能、学术服务） |
+| `index.html` | 页面结构和固定文字（简介、学术服务与荣誉） |
 | `assets/js/data.js` | **日常只改这个**：研究方向、News、论文列表、Google Scholar 链接 |
 | `assets/js/main.js` | 把 `data.js` 渲染成页面（筛选、BibTeX、主题切换），一般不用动 |
 | `assets/css/style.css` | 样式；颜色都在文件顶部的 `:root` 变量里，暗色模式在下面重新定义 |
