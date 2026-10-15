@@ -10,8 +10,8 @@ Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.g
 | `assets/js/data.js` | **日常只改这个**：研究方向、News、论文列表、Google Scholar 链接 |
 | `assets/js/main.js` | 把 `data.js` 渲染成页面（筛选、BibTeX、主题切换），一般不用动 |
 | `assets/css/style.css` | 样式；颜色都在文件顶部的 `:root` 变量里，暗色模式在下面重新定义 |
-| `assets/cv/Dai_Shi_CV.pdf` | 网站上 "CV" 按钮下载的文件，换新版直接覆盖同名文件 |
 | `assets/img/profile.jpg` | 头像（4:5 竖图，480×600 左右即可） |
+| `assets/img/video-plato-aristotle.jpg` | 主页视频的封面图（16:9） |
 
 ## 常见更新
 
@@ -30,11 +30,7 @@ Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.g
 - `links` 里有哪个链接就显示哪个按钮：`paper`、`arxiv`、`openreview`、`code`、`project`。
 - 不写 `bibtex` 会自动生成一条；想用官方的就把 DBLP / arXiv 的 BibTeX 粘到 `bibtex` 字段里。
 
-**换 CV**：把新 PDF 覆盖到 `assets/cv/Dai_Shi_CV.pdf`。公开网站上的 CV 不要带手机号。现在这份是用 Overleaf 里 `Ethan_CV/CV_ai_industry.tex` 编译的，只把手机号那一行换成了主页链接；改完 Overleaf 后可以这样重新生成（不会改动原文件）：
-
-```bash
-sed -E 's|\+44 [0-9 ]+[0-9]|\\href{https://eethanshi.github.io/}{eethanshi.github.io}|' "../应用/Overleaf/Ethan_CV/CV_ai_industry.tex" > /tmp/cv_public.tex && tectonic /tmp/cv_public.tex && cp /tmp/cv_public.pdf assets/cv/Dai_Shi_CV.pdf
-```
+**换主页视频**：在 `index.html` 的 "Featured video" 一节里改 YouTube 链接和 `data-yt`（视频 ID），封面图换成新视频的 `https://i.ytimg.com/vi/<视频ID>/maxresdefault.jpg`。访客点击封面后才会加载 YouTube 播放器。网站上不提供 CV 下载。
 
 **BibTeX**：官方 BibTeX 在 `assets/js/bibtex.js`，按论文 `id` 对应；没有的会根据 `data.js` 自动生成。
 

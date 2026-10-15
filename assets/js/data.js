@@ -12,7 +12,7 @@
  *   year      number
  *   topics    ids from `topics` below
  *   selected  true to show in the default "Selected" view
- *   links     { paper, arxiv, openreview, code, project }  (omit any you do not have)
+ *   links     { paper, arxiv, openreview, code, project, video }  (omit any you do not have)
  *   tldr      optional one-sentence summary (shown in the "Selected" view)
  *
  * BibTeX lives in bibtex.js, keyed by id. Papers without an entry get one generated from these fields.
@@ -57,7 +57,7 @@ window.SITE = {
   ],
 
   news: [
-    { date: "2026-10", html: "New preprint: <a href=\"#pub-plato_aristotle\" data-pub=\"plato_aristotle\">From Plato to Aristotle</a>, toward a general theory of representation hypotheses." },
+    { date: "2026-10", html: "New preprint: <a href=\"#pub-plato_aristotle\" data-pub=\"plato_aristotle\">From Plato to Aristotle</a>, toward a general theory of representation hypotheses (<a href=\"#video\">watch the video</a>)." },
     { date: "2026-09", html: "Three papers accepted at <strong>NeurIPS 2026</strong>: <a href=\"#pub-spdebench\" data-pub=\"spdebench\">SPDEBench</a>, <a href=\"#pub-relgs\" data-pub=\"relgs\">RelGS</a> and <a href=\"#pub-loft\" data-pub=\"loft\">LOFT</a>." },
     { date: "2026-09", html: "Accepted papers are out for the <a href=\"https://eethanshi.github.io/stochastic-dynamics-2026/\">NeurIPS 2026 Workshop on AI for Stochastic Dynamics</a>, which I am organizing as Program Chair. See you in Sydney on 11 December." },
     { date: "2026-08", html: "Our survey on <a href=\"#pub-oversquashing\" data-pub=\"oversquashing\">over-squashing in graph neural networks</a> is published in <strong>IEEE TPAMI</strong>." },
@@ -77,7 +77,7 @@ window.SITE = {
       authors: ["Dai Shi", "Andi Han", "Xiaoyu Li", "Luke Thompson", "José Miguel Hernández-Lobato"],
       venue: "ICLR 2027", type: "conference", status: "under_review", year: 2026,
       topics: ["llm"], selected: true,
-      links: { arxiv: "https://arxiv.org/abs/2610.20286", code: "https://github.com/EEthanShi/LRH" },
+      links: { arxiv: "https://arxiv.org/abs/2610.20286", code: "https://github.com/EEthanShi/LRH", video: "https://www.youtube.com/watch?v=dmv-Oj-_XFI" },
       tldr: "Shows that conflicting findings on whether models converge to shared representations come from alignment criteria sitting at different points of one lattice, and tests this on pretrained and theoretical models."
     },
     {

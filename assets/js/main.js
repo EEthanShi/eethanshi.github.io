@@ -118,6 +118,23 @@
     Object.keys(byId).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
   }
 
+  // ---------- video: load the YouTube player only when clicked ----------
+
+  $all(".yt-facade").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(a.getAttribute("data-yt")) + "?autoplay=1&rel=0";
+      iframe.title = a.getAttribute("data-yt-title") || "YouTube video";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      a.parentNode.replaceChild(iframe, a);
+      iframe.focus();
+    });
+  });
+
   // ---------- data guard ----------
 
   var SITE = window.SITE;
@@ -126,7 +143,7 @@
     if (window.console) console.error("assets/js/data.js failed to load or has a syntax error");
     ["research", "news"].forEach(function (id) { var s = document.getElementById(id); if (s) s.hidden = true; });
     var pl = $("#pub-list");
-    if (pl) pl.innerHTML = '<p class="noscript-note">The publication list failed to load. Selected papers are in my <a href="assets/cv/Dai_Shi_CV.pdf">CV (PDF)</a>.</p>';
+    if (pl) pl.innerHTML = '<p class="noscript-note">The publication list failed to load. My papers are also listed on <a href="https://openreview.net/profile?id=~Dai_Shi1">OpenReview</a>.</p>';
     var pc = $(".pub-controls"); if (pc) pc.hidden = true;
     return;
   }
@@ -232,6 +249,7 @@
     if (L.openreview) actions.push('<a href="' + esc(L.openreview) + '">OpenReview</a>');
     if (L.code) actions.push('<a href="' + esc(L.code) + '">Code</a>');
     if (L.project) actions.push('<a href="' + esc(L.project) + '">Project</a>');
+    if (L.video) actions.push('<a href="' + esc(L.video) + '">Video</a>');
     var bib = "";
     if (hasLinks(p)) {
       actions.push('<button type="button" class="bib-toggle" aria-expanded="false" aria-controls="bib-' + esc(p.id) + '">BibTeX</button>');
