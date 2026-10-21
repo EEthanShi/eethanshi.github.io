@@ -242,7 +242,7 @@ window.SITE = {
       authors: ["Dai Shi", "Xiaoyu Li", "Andi Han", "José Miguel Hernández-Lobato"],
       venue: "arXiv", type: "preprint", status: "preprint", year: 2026,
       topics: ["llm"],
-      links: { arxiv: "https://arxiv.org/abs/2609.06862" }
+      links: { arxiv: "https://arxiv.org/abs/2609.06862", project: "https://github.com/EEthanShi/awesome-superposition", video: "https://www.youtube.com/watch?v=scsMqFfoiKY" }
     },
     {
       id: "ball_box", short: "The Ball and the Box",

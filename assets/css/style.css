@@ -403,6 +403,14 @@ p { margin: 0 0 1em; }
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
 }
+.video-feature + .video-feature { margin-top: clamp(32px, 5vw, 48px); }
+/* divider spans the content width only, not the page gutters */
+.video-feature + .video-feature::before {
+  content: "";
+  grid-column: 1 / -1;
+  order: -2;
+  border-top: 1px solid var(--line);
+}
 .video-text h2 { font-size: clamp(1.55rem, 3vw, 1.9rem); margin-bottom: 12px; }
 .video-text p { color: var(--muted); }
 .video-text p a { color: var(--accent); }
