@@ -15,6 +15,8 @@ Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.g
 
 ## 常见更新
 
+**改了 CSS 或 JS 之后**：把 `index.html` 和 `404.html` 里引用 `style.css` / `*.js` 的 `?v=日期` 改成当天日期（例如 `?v=20261021`）。GitHub Pages 让浏览器缓存这些文件 10 分钟，不改版本号的话，访客可能看到新 HTML 配旧样式。
+
 **加一条 News**：在 `data.js` 的 `news` 数组里加一行，日期写 `"YYYY-MM"`，会自动按时间排序，默认显示最新 6 条。
 
 ```js
