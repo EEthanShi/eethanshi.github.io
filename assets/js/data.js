@@ -183,7 +183,7 @@ window.SITE = {
       authors: ["Yuantu Zhu*", "Zheyan Li*", "Dai Shi", "Luke Thompson", "Oliver Nash", "Jose Miguel Lara Rangel", "Siran Li", "Bingguang Chen", "Rongchan Zhu", "Qi Meng", "Hao Ni"],
       venue: "NeurIPS 2026", type: "conference", status: "published", year: 2026,
       topics: ["stochastic", "science"], selected: true,
-      links: { paper: "https://neurips.cc/virtual/2026/poster/139762", arxiv: "https://arxiv.org/abs/2505.18511", code: "https://github.com/DeepIntoStreams/SPDE_hackathon" },
+      links: { paper: "https://neurips.cc/virtual/2026/poster/139762", arxiv: "https://arxiv.org/abs/2505.18511", code: "https://github.com/DeepIntoStreams/SPDEBench", video: "#video-spdebench" },
       tldr: "The first benchmark covering both regular and singular SPDEs: ready-to-use datasets with renormalization-aware data generation, baseline models including neural operators, and seven evaluation metrics."
     },
     {

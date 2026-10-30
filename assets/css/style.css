@@ -425,6 +425,7 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow);
 }
 .video-frame iframe,
+.video-frame video,
 .yt-facade,
 .yt-facade img {
   position: absolute;
