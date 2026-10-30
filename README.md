@@ -1,4 +1,4 @@
-# Dai (Ethan) Shi — personal website
+# Dai Shi — personal website
 
 Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.github.io/>.
 
