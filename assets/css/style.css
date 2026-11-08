@@ -22,6 +22,7 @@
   --review-soft: #efecf8;
   --focus: #2f6fd0;
   --shadow: 0 1px 2px rgba(20, 24, 31, 0.04), 0 4px 16px rgba(20, 24, 31, 0.05);
+  --sky-display: none;
 
   --font-serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -36,7 +37,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0e1116;
+    --bg: #0a0e17;
+    --sky-display: block;
     --surface: #151a21;
     --surface-2: #1a2028;
     --text: #e7e9ec;
@@ -59,7 +61,8 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0e1116;
+  --bg: #0a0e17;
+  --sky-display: block;
   --surface: #151a21;
   --surface-2: #1a2028;
   --text: #e7e9ec;
@@ -103,6 +106,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+/* Starry sky behind the page, dark theme only; painted by assets/js/sky.js. */
+.sky {
+  display: var(--sky-display);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.sky.is-ready { opacity: 1; }
+.sky canvas { position: absolute; top: 0; left: 0; }
 
 img { max-width: 100%; height: auto; display: block; }
 
@@ -173,6 +190,27 @@ p { margin: 0 0 1em; }
   transition: border-color 0.2s ease;
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
+
+/* Over the starry sky the header stays see-through until the page scrolls,
+   and the section rules fade out towards the edges of the window. */
+:root[data-theme="dark"] .site-header:not(.is-scrolled) {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+:root[data-theme="dark"] .section {
+  border-image: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent) 1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-header:not(.is-scrolled) {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  :root:not([data-theme="light"]) .section {
+    border-image: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent) 1;
+  }
+}
 
 .site-header .wrap {
   display: flex;
@@ -1049,6 +1087,7 @@ p { margin: 0 0 1em; }
 @media print {
   :root, :root[data-theme], :root:not([data-theme="light"]) {
     color-scheme: light;
+    --sky-display: none;
     --bg: #fff; --surface: #fff; --surface-2: #fff; --text: #000; --muted: #333; --faint: #555;
     --line: #ccc; --line-strong: #999; --accent: #000; --accent-hover: #000; --accent-ink: #000; --accent-soft: #fff;
     --award: #000; --award-soft: #fff; --review: #000; --review-soft: #fff;
