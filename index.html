@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261108">
 
   <script>
     // Apply a saved theme before first paint to avoid a flash.
@@ -144,6 +144,60 @@
             Cambridge, United Kingdom
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- ===== Recent works ===== -->
+    <section class="section" id="recent" aria-labelledby="recent-title">
+      <div class="wrap">
+        <div class="section-head section-head-inline">
+          <h2 id="recent-title">Recent works</h2>
+          <span class="aside">(more coming soon)</span>
+        </div>
+
+        <article class="ym-card" id="ym-card">
+          <div class="ym-lattice-bg" aria-hidden="true"></div>
+          <img class="ym-poster" src="assets/img/ym-torus.webp" width="900" height="760" alt="" decoding="async">
+          <canvas class="ym-canvas" role="img"
+                  aria-label="The Wilson-loop field of a two-dimensional SU(2) stochastic Yang–Mills simulation, drawn on a torus and evolving in time. Drag to rotate."></canvas>
+
+          <div class="ym-copy">
+            <p class="ym-kicker">Stochastic Yang–Mills · SU(2) on the unit torus</p>
+            <h3 class="ym-title">One noise, four lattices</h3>
+            <p class="ym-text">
+              The gauge-covariant lattice dynamic of Chevyrev and Shen, simulated on four lattices driven by one
+              continuum white noise. The torus shows the gauge-invariant Wilson-loop field as it evolves.
+            </p>
+            <p class="ym-facts">16² to 128² sites · 64 trajectories · Δt = ε²/32</p>
+            <a class="ym-cta" href="https://eethanshi.github.io/sym2d-atlas/">
+              Explore the interactive atlas
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="ym-scale" aria-hidden="true">
+            <span class="ym-scale-title">1 − w, square-root scale</span>
+            <span class="ym-scale-bar"></span>
+            <span class="ym-scale-ticks"><i style="left:0">0</i><i style="left:21.8%">0.05</i><i style="left:43.6%">0.2</i><i style="left:68.9%">0.5</i><i style="left:100%">1.05</i></span>
+          </div>
+
+          <div class="ym-hud">
+            <button class="ym-play" type="button" aria-label="Pause" aria-pressed="true">
+              <svg class="ym-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+              <svg class="ym-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            </button>
+            <input class="ym-scrub" type="range" min="0" max="50" step="1" value="0" aria-label="Stored snapshot">
+            <output class="ym-time">t = 0.0000</output>
+            <span class="ym-lattice">N = 7 · 128 × 128</span>
+            <div class="ym-chips" role="group" aria-label="Lattice drawn on the torus">
+              <button class="ym-chip" type="button" data-n="4" aria-pressed="false">N = 4</button>
+              <button class="ym-chip" type="button" data-n="5" aria-pressed="false">5</button>
+              <button class="ym-chip" type="button" data-n="6" aria-pressed="false">6</button>
+              <button class="ym-chip" type="button" data-n="7" aria-pressed="true">7</button>
+            </div>
+          </div>
+        </article>
+        <p class="ym-note">Trial run of 7 November 2026. Wilson loop around a square of side 1/4; playback crossfades between the 51 stored snapshots. Drag the torus to rotate it.</p>
       </div>
     </section>
 
@@ -348,8 +402,9 @@
     </div>
   </footer>
 
-  <script src="assets/js/data.js?v=20261030"></script>
-  <script src="assets/js/bibtex.js?v=20261030"></script>
-  <script src="assets/js/main.js?v=20261030"></script>
+  <script src="assets/js/data.js?v=20261108"></script>
+  <script src="assets/js/bibtex.js?v=20261108"></script>
+  <script src="assets/js/main.js?v=20261108"></script>
+  <script src="assets/js/yang-mills.js?v=20261108"></script>
 </body>
 </html>

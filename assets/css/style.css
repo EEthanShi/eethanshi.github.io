@@ -395,6 +395,208 @@ p { margin: 0 0 1em; }
 .section-head h2 { font-size: clamp(1.55rem, 3vw, 1.9rem); }
 .section-head .aside { color: var(--muted); font-size: 0.92rem; }
 
+/* ---------- Recent works: live Yang-Mills torus (dark in both themes) ---------- */
+
+.section-head-inline { justify-content: flex-start; gap: 10px; }
+
+.ym-card {
+  --ym-cell: 8px;
+  position: relative;
+  isolation: isolate;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(141, 182, 234, 0.2);
+  background:
+    radial-gradient(60% 75% at 71% 44%, rgba(57, 135, 229, 0.3), rgba(57, 135, 229, 0) 70%),
+    linear-gradient(135deg, #060a12 0%, #0a111d 55%, #0b1626 100%);
+  box-shadow: 0 24px 60px -24px rgba(8, 24, 52, 0.65);
+  color: #e8edf5;
+}
+
+/* Faint lattice behind the torus; its spacing follows the selected N. */
+.ym-lattice-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(158, 197, 244, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 197, 244, 0.1) 1px, transparent 1px);
+  background-size: var(--ym-cell) var(--ym-cell);
+  -webkit-mask-image: radial-gradient(70% 90% at 71% 46%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(70% 90% at 71% 46%, #000 0%, transparent 72%);
+  transition: background-size 0.5s ease;
+}
+
+.ym-canvas,
+.ym-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.ym-canvas {
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.ym-canvas.is-dragging { cursor: grabbing; }
+.ym-poster {
+  left: auto;
+  right: -3%;
+  width: 62%;
+  object-fit: contain;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+.ym-ready .ym-canvas { opacity: 1; }
+.ym-ready .ym-poster { opacity: 0; }
+
+.ym-copy {
+  position: relative;
+  max-width: 400px;
+  padding: clamp(28px, 4vw, 44px) 0 0 clamp(24px, 4vw, 44px);
+}
+.ym-kicker {
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9ec5f4;
+}
+.ym-title {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.4vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #f4f7fb;
+}
+.ym-text { margin: 0 0 14px; font-size: 0.98rem; line-height: 1.6; color: #c3ccd9; }
+.ym-facts { margin: 0 0 22px; font-family: var(--font-mono); font-size: 0.78rem; color: #8fa0b6; }
+.ym-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #e8f1fd;
+  color: #0b1b33;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.ym-cta svg { width: 16px; height: 16px; transition: transform 0.15s ease; }
+.ym-cta:hover { background: #fff; color: #0b1b33; }
+.ym-cta:hover svg { transform: translateX(3px); }
+
+.ym-scale {
+  position: absolute;
+  top: clamp(20px, 3vw, 28px);
+  right: clamp(20px, 3vw, 28px);
+  width: 190px;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: #a9b6c8;
+}
+.ym-scale-title { display: block; margin-bottom: 6px; }
+.ym-scale-bar {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #121c2c, #0d366b, #184f95, #256abf, #3987e5, #6da7ec, #9ec5f4, #d6e7fc);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.ym-scale-ticks { position: relative; display: block; height: 14px; margin-top: 4px; }
+.ym-scale-ticks i { position: absolute; font-style: normal; transform: translateX(-50%); }
+.ym-scale-ticks i:first-child { transform: none; }
+.ym-scale-ticks i:last-child { transform: translateX(-100%); }
+
+.ym-hud {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 34px clamp(20px, 3vw, 28px) 18px;
+  background: linear-gradient(0deg, rgba(5, 9, 16, 0.85), rgba(5, 9, 16, 0));
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #c3ccd9;
+}
+.ym-play {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(158, 197, 244, 0.32);
+  border-radius: 50%;
+  background: rgba(158, 197, 244, 0.1);
+  color: #e8f1fd;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.ym-play:hover { background: rgba(158, 197, 244, 0.22); }
+.ym-play svg { width: 16px; height: 16px; }
+.ym-play[aria-pressed="true"] .ym-icon-play,
+.ym-play[aria-pressed="false"] .ym-icon-pause { display: none; }
+.ym-scrub { flex: 1 1 auto; min-width: 60px; margin: 0; accent-color: #6da7ec; cursor: pointer; }
+.ym-time { flex: none; font-variant-numeric: tabular-nums; }
+.ym-lattice { flex: none; color: #8fa0b6; }
+.ym-chips { flex: none; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(158, 197, 244, 0.1); }
+.ym-chip {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #c3ccd9;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.ym-chip:hover { color: #fff; }
+.ym-chip[aria-pressed="true"] { background: #e8f1fd; color: #0b1b33; }
+.ym-play:focus-visible,
+.ym-chip:focus-visible,
+.ym-scrub:focus-visible,
+.ym-cta:focus-visible { outline: 2px solid #9ec5f4; outline-offset: 2px; }
+
+/* No WebGL or missing data: keep the poster and drop the controls. */
+.ym-static .ym-hud,
+.ym-static .ym-canvas { display: none; }
+
+.ym-note { margin: 12px 2px 0; font-size: 0.82rem; color: var(--faint); }
+
+@media (max-width: 760px) {
+  .ym-card { min-height: 0; padding-top: 372px; }
+  .ym-canvas, .ym-poster { inset: 0 0 auto 0; width: 100%; height: 340px; }
+  .ym-copy { max-width: none; padding: 8px 20px 18px; }
+  .ym-card {
+    background:
+      radial-gradient(90% 300px at 50% 170px, rgba(57, 135, 229, 0.3), rgba(57, 135, 229, 0) 70%),
+      linear-gradient(135deg, #060a12 0%, #0a111d 55%, #0b1626 100%);
+  }
+  .ym-lattice-bg {
+    -webkit-mask-image: radial-gradient(90% 300px at 50% 170px, #000 0%, transparent 72%);
+    mask-image: radial-gradient(90% 300px at 50% 170px, #000 0%, transparent 72%);
+  }
+  .ym-scale { top: 322px; left: 20px; right: auto; width: 190px; }
+  .ym-hud { position: static; flex-wrap: wrap; gap: 10px; padding: 0 20px 18px; background: none; }
+  .ym-scrub { flex-basis: 40%; }
+  .ym-lattice { display: none; }
+}
+
 /* ---------- Featured video ---------- */
 
 .video-feature {

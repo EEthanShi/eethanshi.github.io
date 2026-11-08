@@ -9,6 +9,7 @@ Plain HTML/CSS/JS, no build step. Served by GitHub Pages at <https://eethanshi.g
 | `index.html` | 页面结构和固定文字（简介、学术服务与荣誉） |
 | `assets/js/data.js` | **日常只改这个**：研究方向、News、论文列表、Google Scholar 链接 |
 | `assets/js/main.js` | 把 `data.js` 渲染成页面（筛选、BibTeX、主题切换），一般不用动 |
+| `assets/js/yang-mills.js` | "Recent works" 卡片里的动态 torus（原生 WebGL），数据在 `assets/data/yang-mills/`，来自 sym2d-atlas |
 | `assets/css/style.css` | 样式；颜色都在文件顶部的 `:root` 变量里，暗色模式在下面重新定义 |
 | `assets/img/profile.jpg` | 头像（4:5 竖图，480×600 左右即可） |
 | `assets/img/video-plato-aristotle.jpg` | 主页视频的封面图（16:9） |
