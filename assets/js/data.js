@@ -18,7 +18,7 @@
  * BibTeX lives in bibtex.js, keyed by id. Papers without an entry get one generated from these fields.
  */
 window.SITE = {
-  updated: "2026-10",
+  updated: "2026-11",
 
   profiles: {
     scholar: ""
@@ -57,6 +57,7 @@ window.SITE = {
   ],
 
   news: [
+    { date: "2026-11", html: "<em>What Grothendieck Knew About Word Substitutions: How Loose Is Certified Accuracy?</em> accepted to the Findings of <strong>EACL 2027</strong> (<a href=\"https://openreview.net/forum?id=AVzJpESh5E\">OpenReview</a>)." },
     { date: "2026-10", html: "New preprint: <a href=\"#pub-plato_aristotle\" data-pub=\"plato_aristotle\">From Plato to Aristotle</a>, toward a general theory of representation hypotheses (<a href=\"#video\">watch the video</a>)." },
     { date: "2026-09", html: "Three papers accepted at <strong>NeurIPS 2026</strong>: <a href=\"#pub-spdebench\" data-pub=\"spdebench\">SPDEBench</a>, <a href=\"#pub-relgs\" data-pub=\"relgs\">RelGS</a> and <a href=\"#pub-loft\" data-pub=\"loft\">LOFT</a>." },
     { date: "2026-09", html: "Accepted papers are out for the <a href=\"https://eethanshi.github.io/stochastic-dynamics-2026/\">NeurIPS 2026 Workshop on AI for Stochastic Dynamics</a>, which I am organizing as Program Chair. See you in Sydney on 11 December." },
