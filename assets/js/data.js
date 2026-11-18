@@ -57,7 +57,7 @@ window.SITE = {
   ],
 
   news: [
-    { date: "2026-11", html: "<a href=\"#pub-concord\" data-pub=\"concord\">CONCORD</a>, concept-oriented graph-coupled dynamics for interpretable time-series forecasting, accepted in principle at <strong>Nature Communications</strong>." },
+    { date: "2026-11", html: "<a href=\"#pub-concord\" data-pub=\"concord\">CONCORD</a>, concept-oriented graph-coupled dynamics for interpretable time-series forecasting, accepted at <strong>Nature Communications</strong>." },
     { date: "2026-11", html: "<em>What Grothendieck Knew About Word Substitutions: How Loose Is Certified Accuracy?</em> accepted to the Findings of <strong>EACL 2027</strong> (<a href=\"https://openreview.net/forum?id=AVzJpESh5E\">OpenReview</a>)." },
     { date: "2026-10", html: "New preprint: <a href=\"#pub-plato_aristotle\" data-pub=\"plato_aristotle\">From Plato to Aristotle</a>, toward a general theory of representation hypotheses (<a href=\"#video\">watch the video</a>)." },
     { date: "2026-09", html: "Three papers accepted at <strong>NeurIPS 2026</strong>: <a href=\"#pub-spdebench\" data-pub=\"spdebench\">SPDEBench</a>, <a href=\"#pub-relgs\" data-pub=\"relgs\">RelGS</a> and <a href=\"#pub-loft\" data-pub=\"loft\">LOFT</a>." },
