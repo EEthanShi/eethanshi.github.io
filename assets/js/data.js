@@ -57,6 +57,7 @@ window.SITE = {
   ],
 
   news: [
+    { date: "2026-11", html: "<a href=\"#pub-concord\" data-pub=\"concord\">CONCORD</a>, concept-oriented graph-coupled dynamics for interpretable time-series forecasting, accepted in principle at <strong>Nature Communications</strong>." },
     { date: "2026-11", html: "<em>What Grothendieck Knew About Word Substitutions: How Loose Is Certified Accuracy?</em> accepted to the Findings of <strong>EACL 2027</strong> (<a href=\"https://openreview.net/forum?id=AVzJpESh5E\">OpenReview</a>)." },
     { date: "2026-10", html: "New preprint: <a href=\"#pub-plato_aristotle\" data-pub=\"plato_aristotle\">From Plato to Aristotle</a>, toward a general theory of representation hypotheses (<a href=\"#video\">watch the video</a>)." },
     { date: "2026-09", html: "Three papers accepted at <strong>NeurIPS 2026</strong>: <a href=\"#pub-spdebench\" data-pub=\"spdebench\">SPDEBench</a>, <a href=\"#pub-relgs\" data-pub=\"relgs\">RelGS</a> and <a href=\"#pub-loft\" data-pub=\"loft\">LOFT</a>." },
@@ -205,6 +206,15 @@ window.SITE = {
       tldr: "A pretrained transformer neural operator that predicts several future molecular states in parallel and generalizes to unseen molecules, released with TG80: over 2.5 million femtoseconds of trajectories across 80 compounds."
     },
     {
+      id: "concord", short: "CONCORD forecasting",
+      title: "Concept-Oriented Graph-Coupled Dynamics for Forecasting",
+      authors: ["Junbin Gao", "Hongwei Ma", "Dai Shi", "Minh-Ngoc Tran"],
+      venue: "Nature Communications", type: "journal", status: "published", year: 2026,
+      topics: ["graph"], selected: true,
+      links: { paper: "https://doi.org/10.21203/rs.3.rs-9264919/v1" },
+      tldr: "Treats forecasting as the evolution of explicit, multi-scale concept states: CONCORD infers them from the history, couples them through a correlation graph and rolls them forward with Kolmogorov–Arnold networks, performing strongly on long-term, traffic and imputation benchmarks while staying interpretable."
+    },
+    {
       id: "oversquashing", short: "Over-squashing survey",
       title: "Exposition on Over-Squashing Problem of GNNs: Current Methods, Benchmarks and Challenges",
       authors: ["Dai Shi", "Andi Han", "Lequan Lin", "Yi Guo", "Junbin Gao"],
@@ -276,14 +286,6 @@ window.SITE = {
       venue: "arXiv", type: "preprint", status: "preprint", year: 2026,
       topics: ["llm"],
       links: { arxiv: "https://arxiv.org/abs/2606.14688" }
-    },
-    {
-      id: "concord", short: "CONCORD forecasting",
-      title: "Concept-Oriented Graph-Coupled Dynamics for Forecasting",
-      authors: ["Junbin Gao", "Hongwei Ma", "Dai Shi", "Minh-Ngoc Tran"],
-      venue: "Research Square", type: "preprint", status: "preprint", year: 2026,
-      topics: ["graph"],
-      links: { paper: "https://doi.org/10.21203/rs.3.rs-9264919/v1" }
     },
     {
       id: "wcno_singular", short: "Wiener-chaos NO for singular SPDEs",
