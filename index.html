@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261118b">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261125b">
 
   <script>
     // Apply a saved theme before first paint to avoid a flash.
@@ -199,6 +199,46 @@
           </div>
         </article>
         <p class="ym-note">Trial run of 7 November 2026. Wilson loop around a square of side 1/4; playback crossfades between the 51 stored snapshots. Drag the torus to rotate it.</p>
+        <article class="ym-card heat-card" id="heat-card">
+          <div class="ym-lattice-bg" aria-hidden="true"></div>
+          <canvas class="ym-canvas" role="img"
+                  aria-label="One sample of the directed-polymer lattice model for the critical two-dimensional stochastic heat equation on the square [−1, 1]², drawn as a relief whose height and colour show the logarithm of the field divided by its mean, evolving in time. Drag to rotate."></canvas>
+
+          <div class="ym-copy">
+            <p class="ym-kicker">Critical 2D stochastic heat equation</p>
+            <h3 class="ym-title">One field, four scales</h3>
+            <p class="ym-text">
+              One sample of the directed-polymer lattice model with its noise strength in the critical window. As the
+              lattice is refined, its averages over fixed squares converge in law to those of the critical 2D stochastic
+              heat flow of Caravenna, Sun and Zygouras, while for t &gt; 0 its value at a single site tends to zero in law
+              and its mean stays fixed.
+            </p>
+            <p class="ym-facts">4096 steps per unit time · lattice spacing 1/64 · critical-window parameter <i class="heat-sym">ϑ</i> = 0</p>
+          </div>
+
+          <div class="ym-scale" aria-hidden="true">
+            <span class="ym-scale-title">field / mean, log scale</span>
+            <span class="ym-scale-bar"></span>
+            <span class="ym-scale-ticks"><i style="left:0">≤0.009</i><i style="left:48.5%">1</i><i style="left:72.1%">10</i><i style="left:100%">152</i></span>
+          </div>
+
+          <div class="ym-hud">
+            <button class="ym-play" type="button" aria-label="Play animation" aria-pressed="true">
+              <svg class="ym-icon-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+              <svg class="ym-icon-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            </button>
+            <input class="ym-scrub" type="range" min="0" max="64" step="1" value="0" aria-label="Stored snapshot">
+            <output class="ym-time" aria-live="off">t = 0.0000</output>
+            <span class="ym-lattice">single sites · spacing 1/64</span>
+            <div class="ym-chips" role="group" aria-label="Scale drawn on the relief">
+              <button class="ym-chip" type="button" data-view="b16" aria-pressed="false">16²</button>
+              <button class="ym-chip" type="button" data-view="b32" aria-pressed="false">32²</button>
+              <button class="ym-chip" type="button" data-view="b64" aria-pressed="false">64²</button>
+              <button class="ym-chip" type="button" data-view="sites" aria-pressed="true">sites</button>
+            </div>
+          </div>
+        </article>
+        <p class="ym-note">Sample 0 of seed 20261121 on [−1, 1]², standard normal noise variables, flat start. Height and colour show the field divided by its mean on one logarithmic scale for all four views: the squares show exact averages over 16², 32² or 64² equal squares, the single sites their own diamond cells. Values below 0.009 times the mean, the lowest 0.1% of the site values, are drawn at the bottom of the scale. Playback crossfades between the 65 stored snapshots. Drag the relief to rotate it.</p>
       </div>
     </section>
 
@@ -407,6 +447,7 @@
   <script src="assets/js/bibtex.js?v=20261118b"></script>
   <script src="assets/js/main.js?v=20261118b"></script>
   <script src="assets/js/yang-mills.js?v=20261118b"></script>
+  <script src="assets/js/heat2d.js?v=20261125c"></script>
   <script src="assets/js/sky.js?v=20261118b"></script>
 </body>
 </html>

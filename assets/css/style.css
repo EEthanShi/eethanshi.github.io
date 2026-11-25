@@ -635,6 +635,44 @@ p { margin: 0 0 1em; }
   .ym-lattice { display: none; }
 }
 
+/* ---------- Recent works: live relief of the critical 2D stochastic heat equation (same layout as the torus) ---------- */
+
+.heat-card {
+  margin-top: 28px;
+  border-color: rgba(253, 179, 102, 0.2);
+  background:
+    radial-gradient(60% 75% at 71% 46%, rgba(246, 126, 75, 0.2), rgba(246, 126, 75, 0) 70%),
+    linear-gradient(135deg, #0b0807 0%, #120d0b 55%, #17100d 100%);
+  box-shadow: 0 24px 60px -24px rgba(52, 22, 10, 0.6);
+}
+.heat-card .ym-lattice-bg {
+  background-image:
+    linear-gradient(rgba(253, 218, 139, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(253, 218, 139, 0.08) 1px, transparent 1px);
+}
+.heat-card .ym-kicker { color: #fdb366; }
+.heat-card .heat-sym { font-family: var(--font-serif); font-size: 1.15em; }
+.heat-card .ym-scale-bar { background: linear-gradient(90deg, #eaeccc, #feda8b, #fdb366, #f67e4b, #dd3d2d, #a50026); }
+.heat-card .ym-play { border-color: rgba(253, 179, 102, 0.32); background: rgba(253, 179, 102, 0.1); }
+.heat-card .ym-play:hover { background: rgba(253, 179, 102, 0.22); }
+.heat-card .ym-scrub { accent-color: #f67e4b; }
+.heat-card .ym-chips { background: rgba(253, 179, 102, 0.1); }
+.heat-card .ym-chip[aria-pressed="true"] { background: #fbeedd; color: #2a140b; }
+/* No WebGL or data: the card has no poster, so drop the scale bar with the canvas. */
+.heat-card.ym-static .ym-scale { display: none; }
+.heat-card .ym-play:focus-visible,
+.heat-card .ym-chip:focus-visible,
+.heat-card .ym-scrub:focus-visible { outline-color: #fdb366; }
+
+@media (max-width: 760px) {
+  .heat-card.ym-static { padding-top: 0; }
+  .heat-card {
+    background:
+      radial-gradient(90% 300px at 50% 170px, rgba(246, 126, 75, 0.2), rgba(246, 126, 75, 0) 70%),
+      linear-gradient(135deg, #0b0807 0%, #120d0b 55%, #17100d 100%);
+  }
+}
+
 /* ---------- Featured video ---------- */
 
 .video-feature {
